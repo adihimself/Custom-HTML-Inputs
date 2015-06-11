@@ -6,7 +6,9 @@
 //
 //############################# 
 
-$(document).ready(function() {
+(function ($) {
+    $.extend({
+        customHTMLInputs: function () {
 	//#############################
 	//
 	// Select
@@ -80,4 +82,6 @@ $(document).ready(function() {
 			$(this).prev().removeClass('active');
 		}
 	});  
-});
+}
+    });
+})(jQuery);
