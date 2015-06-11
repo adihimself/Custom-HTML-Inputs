@@ -13,19 +13,21 @@
 	//
 	// Select
 	//
-	//############################# 
+	//#############################
 	$('select').each(function(index, el) {
-		var id_of_element = $(this).attr('id');
-		var classes_of_element = $(this).attr('class');
-		var init_value = $(this).children('option:selected').html();
-		$(this).wrap('<div class="select-wrapper '+classes_of_element +' '+ id_of_element+'">');
-		if($(this).hasClass('error')){
-			$(this).before('<div class="select error">');
-		} else {
-			$(this).before('<div class="select">');
-		}
+		if (!$(this).parent().hasClass('select-wrapper')) {
+			var id_of_element = $(this).attr('id');
+			var classes_of_element = $(this).attr('class');
+			var init_value = $(this).children('option:selected').html();
+			$(this).wrap('<div class="select-wrapper '+classes_of_element +' '+ id_of_element+'">');
+			if($(this).hasClass('error')){
+				$(this).before('<div class="select error">');
+			} else {
+				$(this).before('<div class="select">');
+			}
 
-		$(this).prev().prepend('<span>'+init_value+'</span>');
+			$(this).prev().prepend('<span>'+init_value+'</span>');
+		}
 	});
 
 	$('select').change(function(event) {
@@ -45,21 +47,19 @@
 	//
 	//############################# 
 	$('input[type="checkbox"]').each(function(index, el) {
-		var id_of_element = $(this).attr('id');
-		var classes_of_element = $(this).attr('class');
-		$(this).wrap('<div class="checkbox-wrapper '+classes_of_element +' '+ id_of_element+'">');
-		if($(this).prop('checked') == true && !$(this).is(':disabled'))
-			{
-			$(this).parent('.checkbox-wrapper').prepend('<div class="checkbox active">');
+		if (!$(this).parent().hasClass('checkbox-wrapper')) {
+			var id_of_element = $(this).attr('id');
+			var classes_of_element = $(this).attr('class');
+			$(this).wrap('<div class="checkbox-wrapper '+classes_of_element +' '+ id_of_element+'">');
+			if($(this).prop('checked') == true && !$(this).is(':disabled')) {
+				$(this).parent('.checkbox-wrapper').prepend('<div class="checkbox active">');
+			} else{
+				$(this).parent('.checkbox-wrapper').prepend('<div class="checkbox">');
+				if ($(this).is(':disabled')) {
+					$(this).prev().addClass('disabled');
+				}
 			}
-		else
-			{
-			$(this).parent('.checkbox-wrapper').prepend('<div class="checkbox">');
-				if ($(this).is(':disabled'))
-					{
-						$(this).prev().addClass('disabled');
-					}
-			}
+		}
 	});
 
 	$('.checkbox').click(function(event) {
