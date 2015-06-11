@@ -1,0 +1,39 @@
+/*#############################
+//
+// Custom HTML-Inputs
+// Author: Adrian Engel
+// http://github.com/adihimself
+//
+//############################# */
+
+.select-wrapper {
+	position: relative;
+	height: 40px;
+}
+
+.select-wrapper div.select {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 100;
+	line-height: 40px; /* Center the Text vertical; same as height */
+	background: #fff;
+	padding: 0px 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.select-wrapper select {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 200;
+	cursor: pointer;
+	border: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+}
