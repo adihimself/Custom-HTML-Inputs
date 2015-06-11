@@ -52,9 +52,9 @@
 			var classes_of_element = $(this).attr('class');
 			$(this).wrap('<div class="checkbox-wrapper '+classes_of_element +' '+ id_of_element+'">');
 			if($(this).prop('checked') == true && !$(this).is(':disabled')) {
-				$(this).parent('.checkbox-wrapper').prepend('<div class="checkbox active">');
+				$(this).parent('.checkbox-wrapper').prepend('<div class="checkbox active"><i class="fa fa-check"></i></div>');
 			} else{
-				$(this).parent('.checkbox-wrapper').prepend('<div class="checkbox">');
+				$(this).parent('.checkbox-wrapper').prepend('<div class="checkbox"><i class="fa fa-check"></i></div>');
 				if ($(this).is(':disabled')) {
 					$(this).prev().addClass('disabled');
 				}
