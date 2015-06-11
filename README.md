@@ -4,6 +4,7 @@ Replace Form-Elements with DIVs and JS functions
 ## Script on your Webpage
 <pre>
 &lt;!-- CSS -->
+&lt;link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 &lt;link rel="stylesheet" href="css/jquery.custom-html-inputs.css">
 
 &lt;!-- jQuery -->
